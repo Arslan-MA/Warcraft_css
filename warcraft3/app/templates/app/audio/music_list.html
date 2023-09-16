@@ -1,0 +1,32 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="content">
+        <h1>Музыка</h1>
+        {% for music in music_list %}
+            {% if music.type == 'Музыка' %}
+                <div class="audio">
+                    <p style="margin: 20px">{{ music.title }}</p>
+                    <audio controls style="margin: 10px">
+                        <source src="{{ music.audio.url }}" type="audio/mp3">
+                    </audio><br>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <div class="audio">
+            <p style="margin: 20px">Warcraft 3 OST - Carrion Waves</p>
+            <audio controls style="margin: 10px">
+                <source src="{% static 'app/img/music/Warcraft 3 OST - Carrion Waves.mp3' %}" type="audio/mp3">
+            </audio><br>
+        </div>
+        <div class="audio">
+            <p style="margin: 20px">Warcraft 3 OST - Cataclysm</p>
+            <audio controls style="margin: 10px">
+                <source src="{% static 'app/img/music/Warcraft 3 OST - Cataclysm.mp3' %}" type="audio/mp3">
+            </audio><br>
+        </div>
+    </div>
+
+{% endblock %}

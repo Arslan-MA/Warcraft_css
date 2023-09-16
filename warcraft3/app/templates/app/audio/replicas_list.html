@@ -1,0 +1,32 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="content">
+        <h1>Реплики персонажей</h1>
+        {% for replicas in replicas_list %}
+            {% if replicas.type == 'Реплики персонажей' %}
+                <div class="audio">
+                    <p style="margin: 20px">{{ replicas.title }}</p>
+                    <audio controls style="margin: 10px">
+                        <source src="{{ replicas.audio.url }}" type="audio/mp3">
+                    </audio><br>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <div class="audio">
+            <p style="margin: 20px">Нежить</p>
+            <audio controls style="margin: 10px">
+                <source src="{% static 'app/img/replicas/нежить.mp3' %}" type="audio/mp3">
+            </audio><br>
+        </div>
+        <div class="audio">
+            <p style="margin: 20px">Рабочий-Орда</p>
+            <audio controls style="margin: 10px">
+                <source src="{% static 'app/img/replicas/рабочий-о.mp3' %}" type="audio/mp3">
+            </audio><br>
+        </div>
+    </div>
+
+{% endblock %}

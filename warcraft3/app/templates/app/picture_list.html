@@ -1,0 +1,20 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="content">
+        <h1>Скриншоты</h1>
+        {% for photo in photo_list %}
+            <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="img" >
+        {% endfor %}
+        <img src="{% static 'app/img/screenshots/screen9.jpeg' %}" alt="screen9" class="img">
+        <img src="{% static 'app/img/screenshots/screen10.jpeg' %}" alt="screen10" class="img">
+        <img src="{% static 'app/img/screenshots/screen11.jpg' %}" alt="screen11" class="img">
+        <img src="{% static 'app/img/screenshots/screen12.jpeg' %}" alt="screen12" class="img">
+        <img src="{% static 'app/img/screenshots/screen13.jpg' %}" alt="screen13" class="img">
+        <img src="{% static 'app/img/screenshots/screen14.jpeg' %}" alt="screen14" class="img">
+        <img src="{% static 'app/img/screenshots/screen15.jpg' %}" alt="screen15" class="img">
+    </div>
+
+{% endblock %}

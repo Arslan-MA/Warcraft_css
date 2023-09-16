@@ -1,0 +1,32 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="content">
+        <h1>Синематики</h1>
+        {% for cutscenes in cutscenes_list %}
+            {% if cutscenes.type == 'Синематики' %}
+                <div class="video">
+                    <p>{{ cutscenes.title }}</p>
+                    <video controls>
+                        <source src="{{ cutscenes.video.url }}" type="video/mp4">
+                    </video>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <div class="video">
+            <p>Warcraft 3 Cinematic - Reign of Chaos Night Elf Ending - Eternity's End</p>
+            <video controls>
+                <source src="{% static 'app/img/cutscenes/Warcraft 3 Cinematic - Reign of Chaos Night Elf Ending - _Eternitys End_.mp4' %}" type="video/mp4">
+            </video>
+        </div>
+        <div class="video">
+            <p>Warcraft 3 Cinematic - The Frozen Throne Ending - The Ascension</p>
+            <video controls>
+                <source src="{% static 'app/img/cutscenes/Warcraft 3 Cinematic - The Frozen Throne Ending - _The Ascension_.mp4' %}" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+{% endblock %}

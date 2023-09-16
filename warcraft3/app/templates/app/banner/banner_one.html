@@ -1,0 +1,15 @@
+{% load static %}
+
+<div class="banner">
+    <img src="{% static 'app/img/logo.png' %}" style="width: 400px;
+    margin-top: 10px;" alt="logo">
+
+    <div class="navbar-main">
+        <a href="{% url 'home' %}"><button class="nav_btn">Главное</button></a>
+        <a href="{% url 'about_us' %}"><button class="nav_btn">Об игре</button></a>
+        <a href="{% url 'screenshots' %}"><button class="nav_btn">Скриншоты</button></a>
+        <a href="{% url 'video' %}"><button class="nav_btn">Видео</button></a>
+        <a href="{% url 'audio' %}"><button class="nav_btn">Аудио</button></a>
+    </div>
+
+</div>
